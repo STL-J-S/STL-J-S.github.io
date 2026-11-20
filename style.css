@@ -1,28 +1,78 @@
+/* 1. Reset default browser spacing & set color variables */
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+  --accent-color: #2563eb;
+  --card-bg: #ffffff;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 20px;
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #00d8ff;
+/* 2. Style Header & Navigation */
+header {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid #e2e8f0;
 }
 
-p {
-    font-size: 1.1rem;
-    color: #cccccc;
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* 3. Style Main Content & Cards */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 4. Style Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-top: 1px solid #e2e8f0;
 }
