@@ -1,78 +1,155 @@
-/* 1. Reset default browser spacing & set color variables */
+/* 1. Global Reset & Variables */
 :root {
-  --bg-color: #f8fafc;
-  --text-color: #1e293b;
-  --accent-color: #2563eb;
-  --card-bg: #ffffff;
+  --primary-color: #2563eb;
+  --dark-bg: #1e293b;
+  --light-bg: #f8fafc;
+  --text-main: #334155;
+  --white: #ffffff;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-}
-
-/* 2. Style Header & Navigation */
-header {
-  text-align: center;
-  padding: 4rem 1.5rem;
-  background-color: var(--card-bg);
-  border-bottom: 1px solid #e2e8f0;
-}
-
-nav {
+  color: var(--text-main);
+  background-color: var(--light-bg);
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 600;
+/* 2. Functional Navbar Styling */
+header {
+  background-color: var(--dark-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav a:hover {
-  color: var(--accent-color);
-}
-
-/* 3. Style Main Content & Cards */
-main {
-  max-width: 800px;
+.navbar {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-section {
-  margin-bottom: 3rem;
+.logo {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-h2 {
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Hover and Active Page States */
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* 3. Main Content & Footer Layout */
+main {
+  max-width: 1100px;
+  width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  flex: 1; /* Pushes footer to bottom */
+}
+
+h1 {
+  font-size: 2.25rem;
+  color: var(--dark-bg);
   margin-bottom: 1rem;
-  color: var(--accent-color);
 }
 
-.project-card {
-  background: var(--card-bg);
+p {
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--white);
   padding: 1.5rem;
-  margin-bottom: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* 4. Style Footer */
+/* Form Styling (for Contact Page) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
 footer {
+  background-color: var(--dark-bg);
+  color: #cbd5e1;
   text-align: center;
-  padding: 2rem;
-  background-color: var(--card-bg);
-  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* 4. Mobile Responsiveness */
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
