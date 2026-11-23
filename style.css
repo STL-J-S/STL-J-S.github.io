@@ -153,3 +153,35 @@ footer {
     gap: 0.5rem;
   }
 }
+
+/* Hide the actual checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Style the label to look like a button */
+.toggle-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+}
+
+/* Default state: show Text 1, hide Text 2 */
+.text-one {
+  display: block;
+}
+.text-two {
+  display: none;
+}
+
+/* Checked state: hide Text 1, show Text 2 */
+.toggle-checkbox:checked ~ .text-one {
+  display: none;
+}
+.toggle-checkbox:checked ~ .text-two {
+  display: block;
+}
